@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AplicacaoMarota.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +12,17 @@ namespace AplicacaoMarota.Controllers
         // GET: Teste
         public ActionResult Index()
         {
-            return View();
+            return View(GetPessoas());
+        }
+
+        private List<Pessoa> GetPessoas()
+        {
+            var pessoas = new List<Pessoa>();
+
+            pessoas.Add(new Pessoa() { Id = 1, Nome = "Adamastor" });
+            pessoas.Add(new Pessoa() { Id = 2, Nome = "Enéas Carneiro" });
+
+            return pessoas;
         }
     }
 }
